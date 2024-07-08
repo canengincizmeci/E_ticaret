@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Login Form HTML CSS | CodingNepal</title>
+
+    <link href="~/css/Loginstyle.css" rel="stylesheet" asp-append-version="true" />
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title"><span>Sifre Degistir</span></div>
+        <form action="/Home/SifreDegistir" method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="row">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="sifre" name="sifre" required />
+            </div>
+            <div class="row">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="tekrar sifre" name="sifre" required />
+            </div>
+
+            <div class="row button">
+                <input type="submit" value="Degistir" />
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

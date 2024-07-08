@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "SatinAl";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/kategoriekle.css" rel="stylesheet" />
+
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link href="~/css/kategoriekle.css" rel="stylesheet" />
+<header class="ccheader">
+    <h1>Satın Al</h1>
+</header>
+
+<div class="wrapper">
+    <form method="post" action="@Url.Action("SatinAl","Home")" class="ccform">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="urun_id" value="@ViewBag.urun_id" />
+
+        <div class="ccfield-prepend">
+            <span class="ccform-addon"><i class="fa fa-user fa-2x"></i></span>
+            <input class="ccformfield" name="alici_ad" type="text" placeholder="Adınız" required>
+        </div>
+
+        <div class="ccfield-prepend">
+            <span class="ccform-addon"><i class="fa fa-mobile-phone fa-2x"></i></span>
+            <input class="ccformfield" name="adress" type="text" placeholder="Adres">
+        </div>
+        <div class="ccfield-prepend">
+            <span class="ccform-addon"><i class="fa fa-mobile-phone fa-2x"></i></span>
+            <input class="ccformfield" name="tel" type="text" placeholder="Tel">
+        </div>
+        <div class="ccfield-prepend">
+            <span class="ccform-addon"><i class="fa fa-mobile-phone fa-2x"></i></span>
+            <input class="ccformfield" name="kart_numara" type="text" placeholder="Kart Numarası">
+        </div>
+        <div class="ccfield-prepend">
+            <span class="ccform-addon"><i class="fa fa-mobile-phone fa-2x"></i></span>
+            <input class="ccformfield" name="mail" type="email" placeholder="mail">
+        </div>
+        <div class="ccfield-prepend">
+            <span class="ccform-addon"><i class="fa fa-mobile-phone fa-2x"></i></span>
+            <input class="ccformfield" name="son_tarih" type="text" placeholder="Geçerlilik tarihi">
+        </div>
+        <div class="ccfield-prepend">
+            <span class="ccform-addon"><i class="fa fa-mobile-phone fa-2x"></i></span>
+            <input class="ccformfield" name="CVV" type="text" placeholder="000">
+        </div>
+        <div class="ccfield-prepend">
+            <input class="ccbtn" type="submit" value="Satın Al">
+        </div>
+    </form>
+</div>

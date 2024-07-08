@@ -1,0 +1,100 @@
+﻿@model SatislarViewModel
+@{
+    ViewData["Title"] = "Satislar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<link href="~/css/index.css" rel="stylesheet" />
+
+<h1>
+    <span class="blue"></span><span class="blue"></span> <span class="yellow">
+        Onaysız Satışlar
+    </span>
+</h1>
+
+
+<table class="container">
+    <thead>
+        <tr>
+            <th>Satış Id</th>
+            <th>Ürün Ad</th>
+            <th>Alıcı Ad</th>
+            <th>Adres</th>
+            <th>Kart Numarası</th>
+            <th>CVV</th>
+            <th>Geçerlilik Tarihi</th>
+            <th>Mail</th>
+            <th>Tel</th>
+            <th>Tarih</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var satis in Model.onaysiz_satislar)
+        {
+            <tr>
+                <td>@satis.SatisId</td>
+                <td>@satis.UrunAd</td>
+                <td>@satis.AliciAd</td>
+                <td>@satis.Address</td>
+                <td>@satis.KartNumarasi</td>
+                <td>@satis.Cvv</td>
+                <td>@satis.GecerlilikTarihi</td>
+                <td>@satis.Mail</td>
+                <td>@satis.Tel</td>
+                <td>@satis.Tarih</td>
+                <td><a href="@Url.Action("SatisOnayla","Home",new {satis_id=satis.SatisId})" class="btn btn-success">Satış Onayla</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+<h1>
+    <span class="blue"></span><span class="blue"></span> <span class="yellow">
+        Onaylı Satışlar
+    </span>
+</h1>
+
+
+<table class="container">
+    <thead>
+        <tr>
+            <th>Satış Id</th>
+            <th>Ürün Ad</th>
+            <th>Alıcı Ad</th>
+            <th>Adres</th>
+            <th>Kart Numarası</th>
+            <th>CVV</th>
+            <th>Geçerlilik Tarihi</th>
+            <th>Mail</th>
+            <th>Tel</th>
+            <th>Tarih</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var satis in Model.onayli_satislar)
+        {
+            <tr>
+                <td>@satis.SatisId</td>
+                <td>@satis.UrunAd</td>
+                <td>@satis.AliciAd</td>
+                <td>@satis.Address</td>
+                <td>@satis.KartNumarasi</td>
+                <td>@satis.Cvv</td>
+                <td>@satis.GecerlilikTarihi</td>
+                <td>@satis.Mail</td>
+                <td>@satis.Tel</td>
+                <td>@satis.Tarih</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

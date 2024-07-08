@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "KategoriEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link href="~/css/kategoriekle.css" rel="stylesheet" />
+<header class="ccheader">
+    <h1>HTML5 Contact Form</h1>
+</header>
+
+<div class="wrapper">
+    <form method="post" action="@Url.Action("KategoriEkle","Home")" class="ccform">
+        @Html.AntiForgeryToken()
+        <div class="ccfield-prepend">
+            <span class="ccform-addon"><i class="fa fa-user fa-2x"></i></span>
+            <input class="ccformfield" name="kategori_ad" type="text" placeholder="Full Name" required>
+        </div>
+        <div class="ccfield-prepend">
+            <input class="ccbtn" type="submit" value="Ekle">
+        </div>
+    </form>
+</div>

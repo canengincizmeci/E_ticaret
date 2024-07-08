@@ -1,0 +1,40 @@
+﻿@model List<Urun>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/index.css" rel="stylesheet" />
+
+
+
+<h1>
+    <span class="blue"></span><span class="blue"></span> <span class="yellow">
+        Ürünler</span>
+</h1>
+
+
+<table class="container">
+    <thead>
+        <tr>
+            <th>Ürün Ad</th>
+            <th>Kategori</th>
+            <th>Miktar</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var urun in Model)
+        {
+            <tr>
+                <td>@urun.UrunAd</td>
+                <td>@urun.KategoriAd</td>
+                <td>@urun.Miktar</td>
+                <td><a href="@Url.Action("Sil","Home",new {urun_id=urun.UrunId})" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="text-center">
+    <a class="btn btn-success" href="@Url.Action("Ekle","Home")">Ekle</a>
+</div>

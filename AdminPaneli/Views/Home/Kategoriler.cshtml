@@ -1,0 +1,39 @@
+﻿@model List<Kategori>
+@{
+    ViewData["Title"] = "Kategoriler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/index.css" rel="stylesheet" />
+
+
+<h1>
+    <span class="blue"></span><span class="blue"></span> <span class="yellow">
+        Kategoriler
+    </span>
+</h1>
+
+
+<table class="container">
+    <thead>
+        <tr>
+            <th>Kategori ID</th>
+            <th>Kategori Ad</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var ktg in Model)
+        {
+            <tr>
+                <td>@ktg.KategoriId</td>
+                <td>@ktg.KategoriAd</td>
+                <td><a href="@Url.Action("KategoriSil","Home",new {kategori_id=ktg.KategoriId})" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="text-center">
+    <a class="btn btn-success" href="@Url.Action("KategoriEkle","Home")">Ekle</a>
+</div>
+
